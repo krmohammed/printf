@@ -14,7 +14,7 @@ typedef struct format
 	int (*f)(va_list *);
 } format_t;
 
-int pas(const char *format, format_t format_list[], va_list *);
+int output_parser(const char *format, format_t format_list[], va_list *);
 int _putchar(char c);
 int _puts(char *s);
 int _printf(const char *format, ...);
