@@ -57,5 +57,6 @@ int print_heX_upper(va_list *, flags_t *);
 int print_str2(va_list *, flags_t *);
 int print_address(va_list *, flags_t *);
 int address_helper(void *);
+int mod_printer(va_list *, flags_t *);
 
 #endif

@@ -24,6 +24,8 @@ int main()
 	_printf("%S\n", "Best\nSchool");
 	_printf("Address:[%p]\n", addr);
 	printf("Address:[%p]\n", addr);
+	_printf("Percent:[%%]\n");
+	printf("Percent:[%%]\n");
 
 	return (0);
 }

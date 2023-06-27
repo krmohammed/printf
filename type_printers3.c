@@ -80,3 +80,22 @@ int address_helper(void *arg)
 	return (count);
 }
 
+
+/**
+ * mod_printer - prints the "%" sign
+ * @args: list of args
+ * @flag: flag
+ *
+ * Return: 1 (Always)
+ */
+
+int mod_printer(va_list *args, flags_t *flag)
+{
+	int count;
+
+	(void)args;
+	(void)flag;
+	count = _putchar('%');
+
+	return (count);
+}
