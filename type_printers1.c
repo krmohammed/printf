@@ -3,6 +3,7 @@
 /**
  * printchar - prints a character
  * @args: list of arguments
+ * @flag: flag
  *
  * Return: 1 (number of character printed)
  */
@@ -22,6 +23,7 @@ int printchar(va_list *args, flags_t *flag)
 /**
  * printnum - prints a number
  * @list: list args
+ * @flag: flag
  *
  * Return: number of integers printed
  */
@@ -33,7 +35,6 @@ int printnum(va_list *list, flags_t *flag)
 	short int short_int;
 	long int num, long_int;
 
-	
         if (flag->h == 1)
 	{
 		short_int = va_arg(*list, int);
@@ -51,35 +52,31 @@ int printnum(va_list *list, flags_t *flag)
 		num = va_arg(*list, int);
 		i = num;
 	}
-
 	if (flag->space == 1 && flag->plus == 0 && num >= 0)
 		count += _putchar(' ');
 	if (flag->plus == 1 && num >= 0)
 		count += _putchar('+');
-
 	if (num < 0)
 	{
 		_putchar('-');
 		count++;
 		i = -i;
 	}
-
 	for (; i / divider > 9;)
 		divider *= 10;
-
 	for (; divider != 0;)
 	{
 		count += _putchar('0' + i / divider);
 		i %= divider;
 		divider /= 10;
 	}
-
 	return (count);
 }
 
 /**
  * printstr - prints a string
  * @args: list of arguments
+ * @flag: flag
  *
  * Return: number of characters printed
  */
@@ -100,6 +97,7 @@ int printstr(va_list  *args, flags_t *flag)
 /**
  * binary_printer - prints a binary number
  * @args: list of arguments
+ * @flag: flag
  *
  * Return: the number of chars printed
  */
@@ -121,10 +119,10 @@ int binary_printer(va_list *args, flags_t *flag)
 
 int print_bin(unsigned int b)
 {
-        int bin = 0;
+	int bin = 0;
 
-        if (b / 2)
-                bin += print_bin(b / 2);
-        bin += _putchar((b % 2) + '0');
-        return (bin);
+	if (b / 2)
+		bin += print_bin(b / 2);
+	bin += _putchar((b % 2) + '0');
+	return (bin);
 }

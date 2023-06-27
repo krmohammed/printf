@@ -15,7 +15,7 @@
  * @space: flag for ' '
  * @hash: flag for '#'
  * @l: length modifier for long
- * @sh: length modifier for short
+ * @h: length modifier for short
  */
 
 typedef struct flags
