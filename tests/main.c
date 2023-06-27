@@ -19,6 +19,7 @@ int main()
 	printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	_printf("Character:[%c]\n", 'H');
 	printf("Character:[%c]\n", 'H');
+	_printf("%S\n", "Best\nSchool");
 
 	return (0);
 }

@@ -54,5 +54,6 @@ int print_octal(va_list *, flags_t *);
 int get_flag(char c, flags_t *);
 int print_hex_lower(va_list *, flags_t *);
 int print_heX_upper(va_list *, flags_t *);
+int print_str2(va_list *, flags_t *);
 
 #endif
