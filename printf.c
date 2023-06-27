@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * printf - prints anything
+ * @format: what to print
+ *
+ * Return: number of characters printed
+ */
+
 int _printf(const char *format, ...)
 {
 	va_list args;

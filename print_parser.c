@@ -1,5 +1,14 @@
 #include "main.h"
 
+/**
+ * output_parser - parses an array of characters
+ * @format: format of characters
+ * @format_list: list of functions
+ * @args: list of args
+ *
+ * Return: number of characters parsed
+ */
+
 int output_parser(const char *format, format_t format_list[], va_list *args)
 {
 	int printed = 0;

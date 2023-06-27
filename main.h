@@ -8,6 +8,13 @@
 #include <unistd.h>
 #include <ctype.h>
 
+/**
+ * struct format - format specifiers
+ * @c: format
+ * @f: right function
+ *
+ */
+
 typedef struct format
 {
 	char *c;
