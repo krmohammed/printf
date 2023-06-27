@@ -14,7 +14,9 @@ int _printf(const char *format, ...)
 	format_t format_list[] = {
 		{"c", printchar}, {"s", printstr},
 		{"i", printnum}, {"b", binary_printer},
-		{"d", printnum},
+		{"u", print_unsigned_int}, {"o", print_octal},
+		{"d", printnum}, {"x", print_hex_lower},
+		{"X", print_heX_upper},
 		{NULL, NULL}
 	};
 

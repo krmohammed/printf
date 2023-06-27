@@ -2,6 +2,7 @@
 #define PRINT_F
 
 #include <stdio.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
@@ -23,7 +24,7 @@ typedef struct flags
 	int space;
 	int hash;
 	int l;
-	int sh;
+	int h;
 } flags_t;
 
 /**
@@ -36,19 +37,22 @@ typedef struct flags
 typedef struct format
 {
 	char *c;
-	int (*f)(va_list *);
+	int (*f)(va_list *, flags_t *);
 } format_t;
 
 int output_parser(const char *format, format_t format_list[], va_list *);
 int _putchar(char c);
 int _puts(char *s);
 int _printf(const char *format, ...);
-int printnum(va_list *);
-int printstr(va_list *);
-int printchar(va_list *);
-int binary_printer(va_list *);
+int printnum(va_list *, flags_t *);
+int printstr(va_list *, flags_t *);
+int printchar(va_list *, flags_t *);
+int binary_printer(va_list *, flags_t *);
 int print_bin(unsigned int b);
-int print_unsigned_int(va_list *);
-int print_octal(va_list *);
+int print_unsigned_int(va_list *, flags_t *);
+int print_octal(va_list *, flags_t *);
+int get_flag(char c, flags_t *);
+int print_hex_lower(va_list *, flags_t *);
+int print_heX_upper(va_list *, flags_t *);
 
 #endif

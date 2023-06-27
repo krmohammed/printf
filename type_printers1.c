@@ -7,10 +7,11 @@
  * Return: 1 (number of character printed)
  */
 
-int printchar(va_list *args)
+int printchar(va_list *args, flags_t *flag)
 {
 	char c;
 
+	(void)flag;
 	c = va_arg(*args, int);
 	_putchar(c);
 
@@ -25,14 +26,37 @@ int printchar(va_list *args)
  * Return: number of integers printed
  */
 
-int printnum(va_list *list)
+int printnum(va_list *list, flags_t *flag)
 {
 	int count = 0, divider = 1;
 	unsigned long int i;
-	long int num;
+	short int short_int;
+	long int num, long_int;
 
-	num = va_arg(*list, int);
-	i = num;
+	
+        if (flag->h == 1)
+	{
+		short_int = va_arg(*list, int);
+		num = short_int;
+		i = short_int;
+	}
+	else if (flag->l == 1)
+	{
+		long_int = va_arg(*list, long int);
+		i = long_int;
+		num = long_int;
+	}
+	else
+	{
+		num = va_arg(*list, int);
+		i = num;
+	}
+
+	if (flag->space == 1 && flag->plus == 0 && num >= 0)
+		count += _putchar(' ');
+	if (flag->plus == 1 && num >= 0)
+		count += _putchar('+');
+
 	if (num < 0)
 	{
 		_putchar('-');
@@ -60,11 +84,12 @@ int printnum(va_list *list)
  * Return: number of characters printed
  */
 
-int printstr(va_list  *args)
+int printstr(va_list  *args, flags_t *flag)
 {
 	char *str = va_arg(*args, char *);
 	int i = 0;
 
+	(void)flag;
 	if (!str)
 		str = "(null)";
 	while (str[i])
@@ -79,10 +104,11 @@ int printstr(va_list  *args)
  * Return: the number of chars printed
  */
 
-int binary_printer(va_list *args)
+int binary_printer(va_list *args, flags_t *flag)
 {
 	unsigned int k = va_arg(*args, int);
 
+	(void)flag;
 	return (print_bin(k));
 }
 
