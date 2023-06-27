@@ -35,7 +35,7 @@ int printnum(va_list *list, flags_t *flag)
 	short int short_int;
 	long int num, long_int;
 
-        if (flag->h == 1)
+	if (flag->h == 1)
 	{
 		short_int = va_arg(*list, int);
 		num = short_int;
