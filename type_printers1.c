@@ -31,7 +31,7 @@ int printnum(va_list *list)
 	unsigned long int i;
 	long int num;
 
-	num = va_arg(*list, long int);
+	num = va_arg(*list, int);
 	i = num;
 	if (num < 0)
 	{

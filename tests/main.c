@@ -9,7 +9,7 @@ int main()
 	len3 = printf("Let's try to printf a simple sentence.\n");
 	_printf("Length:[%d, %i]\n", len2, len2);
 	printf("Length:[%d, %i]\n", len3, len3);
-	_printf("Negative:[%d]\n", -762534);
+	_printf("Negative:[%d]\n", -1);
 	printf("Negative:[%d]\n", -762534);
 
 	printf("%d", len);
