@@ -8,6 +8,13 @@
 #include <unistd.h>
 #include <ctype.h>
 
+/**
+ * struct format - format specifiers
+ * @c: format
+ * @f: right function
+ *
+ */
+
 typedef struct format
 {
 	char *c;
@@ -21,5 +28,7 @@ int _printf(const char *format, ...);
 int printnum(va_list *);
 int printstr(va_list *);
 int printchar(va_list *);
+int binary_printer(va_list *);
+int print_bin(unsigned int b);
 
 #endif

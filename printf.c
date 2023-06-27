@@ -13,7 +13,8 @@ int _printf(const char *format, ...)
 	unsigned int count = 0;
 	format_t format_list[] = {
 		{"c", printchar}, {"s", printstr},
-		{"i", printnum}, {"d", printnum},
+		{"i", printnum}, {"b", binary_printer},
+		{"d", printnum},
 		{NULL, NULL}
 	};
 

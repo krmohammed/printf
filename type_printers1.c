@@ -71,3 +71,34 @@ int printstr(va_list  *args)
 		_putchar(str[i++]);
 	return (i);
 }
+
+/**
+ * binary_printer - prints a binary number
+ * @args: list of arguments
+ *
+ * Return: the number of chars printed
+ */
+
+int binary_printer(va_list *args)
+{
+	unsigned int k = va_arg(*args, int);
+
+	return (print_bin(k));
+}
+
+/**
+ * print_bin - prints a number in binary
+ * @b: unsigned integer
+ *
+ * Return: number of printed characters
+ */
+
+int print_bin(unsigned int b)
+{
+        int bin = 0;
+
+        if (b / 2)
+                bin += print_bin(b / 2);
+        bin += _putchar((b % 2) + '0');
+        return (bin);
+}
