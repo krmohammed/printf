@@ -106,13 +106,13 @@ int print_octal(va_list *args, flags_t *flag)
 int rot13(va_list *args, flags_t *flag)
 {
 	char *str = va_arg(*args, char *);
-        int count = 0;
+	int count = 0;
 
-        (void)flag;
-        if (str == NULL)
-                str = "(ahyy)";
-        count += rot13_helper(str);
-        return (count);
+	(void)flag;
+	if (str == NULL)
+		str = "(ahyy)";
+	count += rot13_helper(str);
+	return (count);
 }
 
 /**
@@ -125,16 +125,16 @@ int rot13(va_list *args, flags_t *flag)
 int rot13_helper(char *str)
 {
 	int count = 0;
-        char c, a;
+	char c, a;
 
-        while ((c = *str++))
-        {
-                if (isalpha(c))
-                {
-                        a = isupper(c) ? 'A' : 'a';
-                        c = ((c - a + 13) % 26) + a;
+	while ((c = *str++))
+	{
+		if (isalpha(c))
+		{
+			a = isupper(c) ? 'A' : 'a';
+			c = ((c - a + 13) % 26) + a;
                 }
-                count += _putchar(c);
-        }
-        return (count);
+		count += _putchar(c);
+	}
+	return (count);
 }
