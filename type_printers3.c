@@ -99,3 +99,32 @@ int mod_printer(va_list *args, flags_t *flag)
 
 	return (count);
 }
+
+
+/**
+ * str_reverse - reverses a string
+ * @args: list of args
+ * @flag: flag
+ *
+ * Return: length of string printed
+ */
+
+int str_reverse(va_list *args, flags_t *flag)
+{
+	char *str;
+	int i, count = 0;
+
+	(void)flag;
+
+	str = va_arg(*args, char *);
+
+	if (!str)
+		str = ")llun(";
+	while (str[i])
+		i++;
+
+	for (i -= 1; i >= 0; i--)
+		count += _putchar(str[i]);
+
+	return (count);
+}

@@ -93,3 +93,48 @@ int print_octal(va_list *args, flags_t *flag)
 	free(octal);
 	return (count);
 }
+
+
+/**
+ * rot13 - adds the rot13 effect on a string
+ * @args: list of args
+ * @flag: flag
+ *
+ * Return: length of chars printed
+ */
+
+int rot13(va_list *args, flags_t *flag)
+{
+	char *str = va_arg(*args, char *);
+        int count = 0;
+
+        (void)flag;
+        if (str == NULL)
+                str = "(ahyy)";
+        count += rot13_helper(str);
+        return (count);
+}
+
+/**
+ * rot13_helper - transforms a string into rot13
+ * @str: string
+ *
+ * Return: number of chars printed
+ */
+
+int rot13_helper(char *str)
+{
+	int count = 0;
+        char c, a;
+
+        while ((c = *str++))
+        {
+                if (isalpha(c))
+                {
+                        a = isupper(c) ? 'A' : 'a';
+                        c = ((c - a + 13) % 26) + a;
+                }
+                count += _putchar(c);
+        }
+        return (count);
+}

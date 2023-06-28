@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 		{"d", printnum}, {"x", print_hex_lower},
 		{"X", print_heX_upper}, {"S", print_str2},
 		{"p", print_address}, {"%", mod_printer},
+		{"r", str_reverse}, {"R", rot13},
 		{NULL, NULL}
 	};
 

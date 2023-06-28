@@ -58,5 +58,8 @@ int print_str2(va_list *, flags_t *);
 int print_address(va_list *, flags_t *);
 int address_helper(void *);
 int mod_printer(va_list *, flags_t *);
+int str_reverse(va_list *, flags_t *);
+int rot13_helper(char *str);
+int rot13(va_list *, flags_t *);
 
 #endif

@@ -26,6 +26,8 @@ int main()
 	printf("Address:[%p]\n", addr);
 	_printf("Percent:[%%]\n");
 	printf("Percent:[%%]\n");
+	_printf("Reverse: [%r]\n", "Reverse");
+	_printf("rot13: [%R]\n", "NULL");
 
 	return (0);
 }
